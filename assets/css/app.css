@@ -1,0 +1,12 @@
+
+
+
+body {
+    background-color: blueviolet;
+    h1{
+        color:red; 
+    }
+    p{
+        font-size:40%; 
+    }
+}

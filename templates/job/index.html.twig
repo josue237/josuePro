@@ -1,0 +1,42 @@
+{# empty Twig template #}
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+        <h1> Mes debuts avec le framework Symfony4 par JosueDev</h1>
+
+            {#{{  dump() }}#}
+            <p>
+                Objet : Candidature pour le poste d’administrateur de bases de données<br>
+                Madame, Monsieur,
+                L’optimisation de vos bases de données et leur bonne gestion /
+                mise à disposition est un enjeu stratégique pour une entreprise comme la vôtre,
+                susceptible d’intervenir autant sur la productivité de vos équipes que sur votre politique
+                de communication, la sécurité de vos données confidentielles.
+            </p>
+            <p>
+                Objet : Candidature pour le poste d’administrateur de bases de données<br>
+                Madame, Monsieur,
+                L’optimisation de vos bases de données et leur bonne gestion /
+                mise à disposition est un enjeu stratégique pour une entreprise comme la vôtre,
+                susceptible d’intervenir autant sur la productivité de vos équipes que sur votre politique
+                de communication, la sécurité de vos données confidentielles.
+            </p>
+            <p>
+                Objet : Candidature pour le poste d’administrateur de bases de données<br>
+                Madame, Monsieur,
+                L’optimisation de vos bases de données et leur bonne gestion /
+                mise à disposition est un enjeu stratégique pour une entreprise comme la vôtre,
+                susceptible d’intervenir autant sur la productivité de vos équipes que sur votre politique
+                de communication, la sécurité de vos données confidentielles.
+            </p>
+        
+            <h2> comments ({{ comments|length}})</h2>
+            
+            <ul> 
+                {% for comment in comments %}
+                    <li> {{ comment }}</li>
+                {% endfor %}  
+             </ul>
+   {% endblock %}     
+
