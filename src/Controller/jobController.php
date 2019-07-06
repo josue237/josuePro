@@ -10,13 +10,13 @@ namespace App\Controller;
 /**
  * description of jobcomposer
  *
- * @author kwame
+ * @author kwamen
  */
 #use Sensio\Bundle\FrameworkExtrabundle\Confirguration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Psr\Log\LoggerInterface;
 
 class jobController extends AbstractController {
 
@@ -27,23 +27,27 @@ class jobController extends AbstractController {
 return $this -> render('job/homepage.html.twig');    }
 
     /**
-      * @route("/index")
+      * @route("/index/{slug}")
      */
 
-    public function index() {
+    public function index($slug) {
 
-       $comments = [
+         $comments = [
            'objet candidature pour le poste d’administrateur de bases de données',
            'l\’optimisation de vos bases de données et leur bonne gestion',
            'mise à disposition est un enjeu stratégique pour une entreprise comme la vôtre',
            'susceptible d’intervenir autant sur la productivité de vos équipes que sur votre politique',
            'de communication, la sécurité de vos données confidentielles',
        ];
-        return $this ->render('job/index.html.twig' ,
-                [
-                    'comments' =>$comments,
-                ]);
 
+        return $this->render('job/index.html.twig' , [
+            'title' => ucwords(str_replace('-', ' ', $slug)),
+           'comments' =>$comments,
+
+            ]);
+}
+                public function toggleArticleHeart($slug, LoggerInterface $logger){
+                $logger->info('Article is being hearted');
 
     }
 
